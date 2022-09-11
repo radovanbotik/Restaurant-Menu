@@ -40,6 +40,7 @@ h4,
 h5 {
   font-family: var(--font-secondary);
 }
+
 .content-container {
   background-color: var(--color-pink-main);
   background-image: url(./textures/groovepaper.png);
@@ -177,6 +178,9 @@ h5 {
 .section-top__maindishes__right__meal > .meal-image {
   flex: 1;
   order: 2;
+}
+.section-top__maindishes__right__meal > .meal-image > img {
+  border-radius: 50%;
 }
 .section-top__maindishes__right__meal > .meal-details {
   flex: 2;
