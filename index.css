@@ -1,7 +1,17 @@
+@import url("https://fonts.googleapis.com/css2?family=Fira+Sans&family=Montserrat&display=swap");
+
+.material-symbols-outlined {
+  font-variation-settings: "FILL" 1, "wght" 400, "GRAD" 0, "opsz" 48;
+}
+
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+}
+.fire {
+  font-size: 1.75em;
+  color: var(--color-red-saturated);
 }
 html {
   font-size: 62.5%;
@@ -9,37 +19,54 @@ html {
 :root {
   --color-red: #b32122;
   --color-red-saturated: #d6000a;
-  --color-pink-main: #f68cb0;
+  --color-pink-main: #f06d99;
   --color-pink-dark1: #eb5988;
+
+  --font-main: "Montserrat", sans-serif;
+  --font-secondary: "Fira Sans", sans-serif;
+
+  --gap-size: 1em;
+  --size-xs: 0.25em;
 }
 body {
   background-color: var(--color-red);
+  background-image: url(./textures/groovepaper.png);
+  font-family: var(--font-main);
+}
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-family: var(--font-secondary);
 }
 .content-container {
   background-color: var(--color-pink-main);
-  /* height: calc(100vh - 2em); */
+  background-image: url(./textures/groovepaper.png);
   width: 80vw;
   max-width: 900px;
   margin: 1em auto;
+  padding: 1em;
 
   display: flex;
   flex-direction: column;
+
+  box-shadow: 2px 0px 10px 0px #6c1515e4;
 }
 
 .section-top {
   flex: 3;
   border: 4px double var(--color-pink-dark1);
-  /* border-bottom: none; */
   margin: 1em 1em 0em 1em;
   padding: 1em;
   display: flex;
-  gap: 1em;
+  gap: var(--gap-size);
   flex-direction: column;
 }
 
 .section-top__maindishes {
   display: flex;
-  gap: 1em;
+  gap: var(--gap-size);
 }
 
 .section-top__maindishes__left {
@@ -47,7 +74,7 @@ body {
   display: grid;
   grid-template-columns: 1fr 1fr;
   /* grid-template-rows: 4fr 1fr; */
-  gap: 1em;
+  gap: var(--gap-size);
 }
 
 .section-top__maindishes__left__meal {
@@ -62,6 +89,8 @@ body {
   align-items: center;
 }
 .section-top__maindishes__left__logo {
+  background-color: var(--color-pink-dark1);
+  padding: 1em 0em;
   grid-column: 1/2;
   grid-row: 1/2;
   display: flex;
@@ -106,6 +135,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 0em var(--size-xs);
 }
 
 .section-top__maindishes__left__meal
@@ -121,7 +151,7 @@ body {
 
 .section-top__maindishes__right {
   flex: 1;
-  gap: 1em;
+  /* gap: var(--gap-size); */
   display: flex;
   flex-direction: column;
   position: relative;
@@ -137,7 +167,7 @@ body {
 
 .section-top__maindishes__right__meal {
   flex: 1;
-  gap: 1em;
+  gap: var(--gap-size);
   padding: 1em;
 
   display: flex;
@@ -154,8 +184,19 @@ body {
   flex-direction: column;
   align-items: flex-start;
 
+  /* white-space: pre-line; */
+}
+.section-top__maindishes__right__meal > .meal-details > header {
+  align-self: stretch;
+  display: flex;
+  /* justify-content: space-between; */
+  align-items: center;
+}
+
+.section-top__maindishes__right__meal > .meal-details p {
   white-space: pre-line;
 }
+
 .section-top__maindishes__right__meal > .meal-details > .price-tab {
   display: flex;
   align-self: stretch;
@@ -168,6 +209,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 0em var(--size-xs);
 }
 
 .section-top__maindishes__right__meal
@@ -189,7 +231,7 @@ body {
 
 .section-top__options {
   display: flex;
-  gap: 1em;
+  gap: var(--gap-size);
   justify-content: space-evenly;
 }
 .section-top__options > * {
@@ -200,8 +242,9 @@ body {
   flex-direction: column;
 }
 .section-top__options__small > header {
-  text-decoration: underline;
+  border-bottom: 1px solid black;
 }
+
 .section-top__options__small .option-bottom {
   display: flex;
   justify-content: space-between;
@@ -209,11 +252,16 @@ body {
 
 .section-top__options__small .option-bottom > .price-tab {
   flex-grow: 0;
+
+  display: flex;
+  gap: var(--gap-size);
+  justify-content: center;
+  align-items: baseline;
 }
-/* .section-top__options__small > main {
+.section-top__options__small .option-bottom > .price-tab > span:nth-of-type(1) {
+  font-size: larger;
+  font-weight: bolder;
 }
-.section-top__options__small > footer {
-} */
 
 .section-top__options__sides {
   padding: 1em 1em;
@@ -243,7 +291,7 @@ body {
 }
 .section-top__options__sides > main > div {
   display: flex;
-  gap: 1em;
+  gap: var(--gap-size);
 }
 .section-top__options__sides > footer {
   justify-self: start;
@@ -267,7 +315,7 @@ body {
   margin: 0em 1em 1em 1em;
 
   display: flex;
-  gap: 1em;
+  gap: var(--gap-size);
 }
 .section-bottom > * {
   flex: 1;
@@ -303,6 +351,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 0em var(--size-xs);
 }
 
 .section-bottom__meal > .meal-details > .price-tab > span:nth-child(1) {
