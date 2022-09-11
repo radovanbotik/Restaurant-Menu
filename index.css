@@ -240,8 +240,6 @@ body {
   align-items: center;
   justify-content: center;
 }
-.section-top__options__sides > footer > div {
-}
 
 .section-bottom {
   flex: 1;
@@ -250,4 +248,49 @@ body {
 
   padding: 1em;
   margin: 0em 1em 1em 1em;
+
+  display: flex;
+  gap: 1em;
+}
+.section-bottom > * {
+  flex: 1;
+}
+.section-bottom__meal {
+  display: grid;
+  grid-template-columns: 0.5fr 1fr 0.5fr;
+}
+.section-bottom__meal > .meal-image {
+  grid-column: 1/-1;
+  display: block;
+  object-fit: cover;
+}
+
+.section-bottom__meal > .meal-details {
+  grid-column: 2/3;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  /* white-space: pre-line; */
+}
+
+.section-bottom__meal > .meal-details > .price-tab {
+  display: flex;
+  align-self: stretch;
+}
+
+.section-bottom__meal > .meal-details > .price-tab > span {
+  border: 1px solid black;
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.section-bottom__meal > .meal-details > .price-tab > span:nth-child(1) {
+  border: 1px solid black;
+  border-right: none;
+  font-size: large;
+  justify-content: flex-start;
 }
