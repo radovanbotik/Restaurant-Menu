@@ -330,6 +330,7 @@ h5 {
 .section-bottom__meal {
   display: grid;
   grid-template-columns: 0.5fr 1fr 0.5fr;
+  row-gap: var(--gap-size);
 }
 .section-bottom__meal > .meal-image {
   grid-column: 1/-1;
